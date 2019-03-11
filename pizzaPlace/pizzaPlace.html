@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-git.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>The Pizza Place</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="intro">
+                <img src="logo.png" alt="Logo image" width="543px" />
+                <h3>Feelin' hungry? Place your order below!</h3>
+            </div>
+            <form id="orderItems">
+                <!-- Size Options -->
+                <div class="menu">
+                    <div class="formHeader">Size:</div>                
+                    <input class="size" type="radio" name="size" value="Personal Pizza" />Personal Pizza<br>
+                    <input class="size" type="radio" name="size" value="Medium Pizza" />Medium Pizza<br>
+                    <input class="size" type="radio" name="size" value="Large Pizza" checked />Large Pizza<br>
+                    <input class="size" type="radio" name="size" value="Extra Large Pizza" />Extra Large Pizza                
+                </div>
+
+                <!-- Crust Options -->
+                <div class="menu">
+                    <div class="formHeader">Crust:</div>            
+                    <input class="crust" type="radio" name="crust" value="Plain" />Plain<br>
+                    <input class="crust" type="radio" name="crust" value="Spicy" />Spicy<br>
+                    <input class="crust" type="radio" name="crust" value="Garlic Butter" />Garlic Butter<br>
+                    <input class="crust" type="radio" name="crust" value="Cheese Stuffed" />Cheese Stuffed<br>
+                    <input class="crust" type="radio" name="crust" value="House Special" />House Special                
+                </div>
+
+                <!-- Sauce Options -->
+                <div class="menu">
+                    <div class="formHeader">Sauce:</div>                
+                    <input class="sauce" type="radio" name="sauce" value="No Sauce" />No Sauce<br>
+                    <input class="sauce" type="radio" name="sauce" value="Marinara" />Marinara<br>
+                    <input class="sauce" type="radio" name="sauce" value="Barbeque" />Barbeque<br>
+                    <input class="sauce" type="radio" name="sauce" value="White" />White
+                </div> 
+            
+                <!-- Cheese Options -->
+                <div class="menu">
+                    <div class="formHeader">Cheese:</div>
+                    <input class="cheese" type="radio" name="cheese" value="No Cheese" />No Cheese<br>
+                    <input class="cheese" type="radio" name="cheese" value="Regular Cheese" />Regular Cheese<br>
+                    <input class="cheese" type="radio" name="cheese" value="Extra Cheese" />Extra Cheese
+                </div>
+
+                <!-- Meat Options -->
+                <div class="menu">
+                    <div class="formHeader">Meats:</div>
+                    <input class="meats" type="checkbox" name="meats" value="Pepperoni">Pepperoni<br>
+                    <input class="meats" type="checkbox" name="meats" value="Sausage">Sausage<br>
+                    <input class="meats" type="checkbox" name="meats" value="Canadian Bacon">Canadian Bacon<br>
+                    <input class="meats" type="checkbox" name="meats" value="Ground Beef">Ground Beef<br>
+                    <input class="meats" type="checkbox" name="meats" value="Anchovy">Anchovy<br>
+                    <input class="meats" type="checkbox" name="meats" value="Chicken">Chicken
+                </div>       
+            
+                <!-- Veggies Options -->
+                <div class="menu">
+                    <div class="formHeader">Veggies:</div>
+                    <input class="veggies" type="checkbox" name="veggies" value="Tomatoes">Tomatoes<br>
+                    <input class="veggies" type="checkbox" name="veggies" value="Onions">Onions<br>
+                    <input class="veggies" type="checkbox" name="veggies" value="Olives">Olives<br>
+                    <input class="veggies" type="checkbox" name="veggies" value="Green Peppers">Green Peppers<br>
+                    <input class="veggies" type="checkbox" name="veggies" value="Mushrooms">Mushrooms<br>
+                    <input class="veggies" type="checkbox" name="veggies" value="Pineapple">Pineapple<br>
+                    <input class="veggies" type="checkbox" name="veggies" value="Spinach">Spinach<br>
+                    <input class="veggies" type="checkbox" name="veggies" value="Jalapenos">Jalapenos
+                </div> 
+            </form>
+        </div>
+
+        <!-- Form Buttons -->
+        <div class="formButtons">
+            <button type="button" onclick="getReceipt()">Place Order</button>
+            <button type="button" onclick="clearForm()">Clear Form</button>
+        </div>
+
+        <!-- Receipt Display -->
+        <div class="hidden receipt" id="extraControls">
+            <table>
+                <tr>
+                    <th class="leftCol">Your Order:</th>
+                    <th class="rightCol">Subtotal:</th>
+                </tr>
+                <tr>
+                    <td class="leftCol" id="selections"></td>
+                    <td class="rightCol" id="subtotals"></td>
+                </tr>
+                <tr id="totalPrice"></tr>
+            </table>
+        </div>
+
+        <script src="receiptFunctions.js"></script>
+    </body>   
+</html>
